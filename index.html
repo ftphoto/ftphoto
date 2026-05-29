@@ -48,17 +48,21 @@
 
   /* GALLERY */
   .gallery {
-    max-width: 780px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 3rem 2rem 5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
   }
 
   .photo-item {
     cursor: pointer;
-    margin-bottom: 0.6rem;
+    display: flex;
+    flex-direction: column;
   }
   .photo-item img {
     width: 100%;
@@ -67,15 +71,15 @@
     transition: opacity 0.25s;
   }
   .photo-item:hover img { opacity: 0.88; }
+
   .photo-caption {
     font-size: 11px;
     color: #888;
     margin-top: 0.35rem;
-    margin-bottom: 1.8rem;
     letter-spacing: 0.04em;
     font-style: italic;
+    padding-bottom: 0.4rem;
   }
-  .no-caption { margin-bottom: 1.8rem; }
 
   /* LIGHTBOX */
   .lightbox {
@@ -93,15 +97,15 @@
 
   .lightbox-inner {
     position: relative;
-    max-width: min(90vw, 900px);
-    max-height: 80vh;
+    max-width: min(90vw, 1000px);
+    max-height: 85vh;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   .lightbox-inner img {
     max-width: 100%;
-    max-height: 78vh;
+    max-height: 82vh;
     object-fit: contain;
     display: block;
   }
@@ -159,6 +163,10 @@
   }
   footer a { color: #888; text-decoration: none; transition: color 0.2s; }
   footer a:hover { color: #111; }
+
+  @media (max-width: 600px) {
+    .grid { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
@@ -173,31 +181,34 @@
 </nav>
 
 <main class="gallery" id="gallery">
+  <div class="grid">
 
-  <div class="photo-item" data-location="Portugal">
-    <img src="images/portugal_1.jpg" alt = "PR8 Madeira,Portugal 2026" loading="lazy">
-    <div class="photo-caption">Madeira, Portugal</div>
-  </div>
+    <div class="photo-item" data-location="Madeira, Portugal">
+      <img src="images/portugal_1.jpg" alt="PR8 Madeira, Portugal 2026" loading="lazy">
+      <div class="photo-caption">Madeira, Portugal</div>
+    </div>
 
-  <div class="photo-item no-caption" data-location="Portugal">
-    <img src="images/portugal_2.jpg" alt="PR8 Madeira, Portugal 2026" loading="lazy">
-    <div class="photo-caption">Madeira, Portugal</div>
-  </div>
+    <div class="photo-item" data-location="Madeira, Portugal">
+      <img src="images/portugal_2.jpg" alt="PR8 Madeira, Portugal 2026" loading="lazy">
+      <div class="photo-caption">Madeira, Portugal</div>
+    </div>
 
-  <div class="photo-item no-caption" data-location="USA">
-    <img src="images/usa_1.jpg" alt="misty day in cannon beach, oregon" loading="lazy">
-    <div class="photo-caption">Cannon Beach, Oregon</div>
-  </div>
-  <div class="photo-item no-caption" data-location="Ireland">
-    <img src="images/ireland_1.jpg" alt="sheep grazing in a pasture" loading="lazy">
-    <div class="photo-caption">Causeway Coast, Northern Ireland</div>
-  </div>
-  <div class="photo-item no-caption" data-location="Ireland">
-    <img src="images/ireland_2.jpg" alt="sheep grazing in a pasture" loading="lazy">
-    <div class="photo-caption">Howth, Ireland</div>
-  </div>
+    <div class="photo-item" data-location="Cannon Beach, Oregon">
+      <img src="images/usa_1.jpg" alt="Misty day in Cannon Beach, Oregon" loading="lazy">
+      <div class="photo-caption">Cannon Beach, Oregon</div>
+    </div>
 
+    <div class="photo-item" data-location="Causeway Coast, Northern Ireland">
+      <img src="images/ireland_1.jpg" alt="Sheep grazing in a pasture" loading="lazy">
+      <div class="photo-caption">Causeway Coast, Northern Ireland</div>
+    </div>
 
+    <div class="photo-item" data-location="Howth, Ireland">
+      <img src="images/ireland_2.jpg" alt="Sheep grazing in a pasture" loading="lazy">
+      <div class="photo-caption">Howth, Ireland</div>
+    </div>
+
+  </div>
 </main>
 
 <!-- LIGHTBOX -->
