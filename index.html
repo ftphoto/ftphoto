@@ -53,10 +53,18 @@
     padding: 3rem 2rem 5rem;
   }
 
-  .grid {
+  /* landscape = 2 cols, portrait = 3 cols */
+  .grid-landscape {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+  .grid-portrait {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
   }
 
   .photo-item {
@@ -164,8 +172,9 @@
   footer a { color: #888; text-decoration: none; transition: color 0.2s; }
   footer a:hover { color: #111; }
 
-  @media (max-width: 600px) {
-    .grid { grid-template-columns: 1fr; }
+  @media (max-width: 700px) {
+    .grid-landscape { grid-template-columns: 1fr; }
+    .grid-portrait  { grid-template-columns: 1fr 1fr; }
   }
 </style>
 </head>
@@ -181,75 +190,76 @@
 </nav>
 
 <main class="gallery" id="gallery">
-    <div class="grid">
-          <div class="photo-item" data-location="Cannon Beach, Oregon - 2026">
-            <img src="images/usa_1.jpg" alt="PR8 Madeira, Portugal 2026" loading="lazy">
-            <div class="photo-caption"></div>
-          </div>
-    <div class="photo-item" data-location="Cannon Beach, Oregon - 2026">
-      <img src="images/canonbeach6.jpg" alt="PR8 Madeira, Portugal 2026" loading="lazy">
-      <div class="photo-caption"></div>
-    </div>
-    <div class="photo-item" data-location="Fanal Forest, Portugal - 2026">
-      <img src="images/portugal_4.jpg" alt="PR8 Madeira, Portugal 2026" loading="lazy">
-      <div class="photo-caption"></div>
-    </div>
-    <div class="photo-item" data-location="PR8 Madeira, Portugal - 2026">
-      <img src="images/portugal_2.jpg" alt="PR8 Madeira, Portugal 2026" loading="lazy">
-      <div class="photo-caption"></div>
-    </div>
-    <div class="photo-item" data-location="Great Ocean Road, Australia - 2024">
-      <img src="images/australia_3.jpg" alt="tbd" loading="lazy">
-      <div class="photo-caption"></div>
-    </div>
 
-    <div class="photo-item" data-location="12 Apostles, Australia - 2024">
-      <img src="images/australia_2.jpg" alt="tbd" loading="lazy">
-      <div class="photo-caption"></div>
-    </div>
-    <div class="photo-item" data-location="Howth, Ireland - 2025">
-      <img src="images/ireland_2.jpg" alt="Misty day in Cannon Beach, Oregon" loading="lazy">
-      <div class="photo-caption"></div>
-    </div>
-    <div class="photo-item" data-location="Howth, Ireland - 2025">
-      <img src="images/ireland_3.jpg" alt="Misty day in Cannon Beach, Oregon" loading="lazy">
-      <div class="photo-caption"></div>
-    </div>
-    <div class="photo-item" data-location="PR8 Madeira, Portugal - 2026">
-      <img src="images/portugal_5.jpg" alt="Misty day in Cannon Beach, Oregon" loading="lazy">
-      <div class="photo-caption"></div>
-    </div>
-    <div class="photo-item" data-location="North Bondi Beach, Australia - 2024">
-      <img src="images/australia_1.jpg" alt="Misty day in Cannon Beach, Oregon" loading="lazy">
-      <div class="photo-caption"></div>
-    </div>
-    <div class="photo-item" data-location="Causeway Coast, Northern Ireland - 2025">
-      <img src="images/ireland_1.jpg" alt="Sheep grazing in a pasture" loading="lazy">
-      <div class="photo-caption"></div>
-    </div>
+  <!-- LANDSCAPE IMAGES (3:2, 16:9) — 2 per row -->
+  <div class="grid-landscape">
 
-    <div class="photo-item" data-location="Milford Sound, New Zealand - 2024">
-      <img src="images/newzealand_1.jpg" alt="Sheep grazing in a pasture" loading="lazy">
-      <div class="photo-caption"></div>
+    <div class="photo-item" data-location="Cannon Beach, Oregon — 2026">
+      <img src="images/usa_1.jpg" alt="Cannon Beach, Oregon" loading="lazy">
     </div>
-    <div class="photo-item" data-location="Perast, Montenegro - 2025">
-      <img src="images/montenegro_1.jpg" alt="Sheep grazing in a pasture" loading="lazy">
-      <div class="photo-caption"></div>
+    <div class="photo-item" data-location="Cannon Beach, Oregon — 2026">
+      <img src="images/canonbeach6.jpg" alt="Cannon Beach, Oregon" loading="lazy">
     </div>
-    <div class="photo-item" data-location="Milford Sound, New Zealand - 2024">
-      <img src="images/newzealand_2.jpg" alt="Sheep grazing in a pasture" loading="lazy">
-      <div class="photo-caption"></div>
+    <div class="photo-item" data-location="Fanal Forest, Portugal — 2026">
+      <img src="images/portugal_4.jpg" alt="Fanal Forest, Madeira" loading="lazy">
     </div>
-    <div class="photo-item" data-location="Capri, Italy - 2025">
-      <img src="images/italy_3.jpg" alt="Sheep grazing in a pasture" loading="lazy">
-      <div class="photo-caption"></div>
+    <div class="photo-item" data-location="PR8 Trail, Madeira, Portugal — 2026">
+      <img src="images/portugal_2.jpg" alt="PR8 Trail, Madeira" loading="lazy">
     </div>
-    <div class="photo-item" data-location="Belongil Beach, Australia - 2024">
-      <img src="images/australia_5.jpg" alt="Sheep grazing in a pasture" loading="lazy">
-      <div class="photo-caption"></div>
+    <div class="photo-item" data-location="Great Ocean Road, Australia — 2024">
+      <img src="images/australia_3.jpg" alt="Great Ocean Road, Australia" loading="lazy">
+    </div>
+    <div class="photo-item" data-location="12 Apostles, Australia — 2024">
+      <img src="images/australia_2.jpg" alt="12 Apostles, Australia" loading="lazy">
+    </div>
+    <div class="photo-item" data-location="Howth, Ireland — 2025">
+      <img src="images/ireland_2.jpg" alt="Howth, Ireland" loading="lazy">
+    </div>
+    <div class="photo-item" data-location="Howth, Ireland — 2025">
+      <img src="images/ireland_3.jpg" alt="Howth, Ireland" loading="lazy">
+    </div>
+    <div class="photo-item" data-location="PR8 Trail, Madeira, Portugal — 2026">
+      <img src="images/portugal_5.jpg" alt="PR8 Trail, Madeira" loading="lazy">
+    </div>
+    <div class="photo-item" data-location="North Bondi Beach, Australia — 2024">
+      <img src="images/australia_1.jpg" alt="North Bondi Beach, Australia" loading="lazy">
+    </div>
+    <div class="photo-item" data-location="Causeway Coast, Northern Ireland — 2025">
+      <img src="images/ireland_1.jpg" alt="Causeway Coast, Northern Ireland" loading="lazy">
+    </div>
+    <div class="photo-item" data-location="Milford Sound, New Zealand — 2024">
+      <img src="images/newzealand_1.jpg" alt="Milford Sound, New Zealand" loading="lazy">
+    </div>
+    <div class="photo-item" data-location="Perast, Montenegro — 2025">
+      <img src="images/montenegro_1.jpg" alt="Perast, Montenegro" loading="lazy">
+    </div>
+    <div class="photo-item" data-location="Milford Sound, New Zealand — 2024">
+      <img src="images/newzealand_2.jpg" alt="Milford Sound, New Zealand" loading="lazy">
+    </div>
+    <div class="photo-item" data-location="Capri, Italy — 2025">
+      <img src="images/italy_3.jpg" alt="Capri, Italy" loading="lazy">
+    </div>
+    <div class="photo-item" data-location="Belongil Beach, Australia — 2024">
+      <img src="images/australia_5.jpg" alt="Belongil Beach, Australia" loading="lazy">
     </div>
 
   </div>
+
+  <!-- PORTRAIT IMAGES (2:3, 4:6) — 3 per row -->
+  <div class="grid-portrait">
+
+    <div class="photo-item" data-location="Byron Bay Australia — 2024">
+      <img src="images/australia_4.jpg" alt="Byron Bay Beach, Australia" loading="lazy">
+    </div>
+    <div class="photo-item" data-location="Amalfi Coast, Italy — 2025">
+      <img src="images/italy_1.jpg" alt="Amalfi Coast, Italy" loading="lazy">
+    </div>
+    <div class="photo-item" data-location="Bondi Beach, Australia — 2024">
+      <img src="images/australia_6.jpg" alt="Bondi Beach, Australia" loading="lazy">
+    </div>
+
+  </div>
+
 </main>
 
 <!-- LIGHTBOX -->
