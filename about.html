@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hannah holzer – about</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #fff;
+    color: #111;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+  }
+
+  /* NAV */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 1.6rem 2rem;
+    border-bottom: 1px solid #e8e8e8;
+  }
+  .nav-name {
+    font-size: 13px;
+    font-weight: 400;
+    text-decoration: none;
+    color: #111;
+    letter-spacing: 0.01em;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 12px;
+    color: #111;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: opacity 0.2s;
+  }
+  .nav-links a:hover { opacity: 0.5; }
+  .nav-links a.active { border-bottom: 1px solid #111; }
+
+  /* ABOUT LAYOUT */
+  .about {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 5rem 2rem 6rem;
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  /* LEFT COLUMN */
+  .about-left {
+    position: sticky;
+    top: 3rem;
+  }
+
+  .about-photo {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: #f0ede8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.6rem;
+    overflow: hidden;
+  }
+  .about-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .about-photo-placeholder {
+    font-size: 11px;
+    color: #bbb;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 2;
+  }
+
+  .gear-label {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #bbb;
+    margin-bottom: 0.7rem;
+  }
+  .gear-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .gear-list li {
+    font-size: 12px;
+    color: #555;
+    letter-spacing: 0.02em;
+  }
+  .gear-list li span {
+    color: #bbb;
+    margin-right: 0.5rem;
+  }
+
+  /* RIGHT COLUMN */
+  .about-right {}
+
+  .about-name {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(2.4rem, 4vw, 3.2rem);
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    color: #111;
+  }
+
+  .about-tagline {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #bbb;
+    margin-bottom: 2.8rem;
+  }
+
+  .about-bio {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    margin-bottom: 3rem;
+  }
+  .about-bio p {
+    font-size: 14px;
+    line-height: 1.85;
+    color: #444;
+  }
+  .about-bio p em {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: #222;
+  }
+
+  /* LOCATIONS */
+  .locations {
+    border-top: 1px solid #e8e8e8;
+    padding-top: 2rem;
+    margin-bottom: 2.5rem;
+  }
+  .locations-label {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #bbb;
+    margin-bottom: 1rem;
+  }
+  .locations-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .location-tag {
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: #555;
+    border: 1px solid #e0e0e0;
+    padding: 0.35rem 0.8rem;
+  }
+
+  /* CONTACT */
+  .about-contact {
+    border-top: 1px solid #e8e8e8;
+    padding-top: 2rem;
+  }
+  .contact-label {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #bbb;
+    margin-bottom: 0.8rem;
+  }
+  .contact-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .contact-links a {
+    font-size: 12px;
+    color: #111;
+    text-decoration: none;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 0.15rem;
+    transition: border-color 0.2s;
+  }
+  .contact-links a:hover { border-color: #111; }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid #e8e8e8;
+    padding: 1.4rem 2rem;
+    display: flex;
+    gap: 1.5rem;
+    font-size: 11px;
+    color: #888;
+  }
+  footer a { color: #888; text-decoration: none; transition: color 0.2s; }
+  footer a:hover { color: #111; }
+
+  @media (max-width: 680px) {
+    .about {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      padding: 3rem 1.5rem 4rem;
+    }
+    .about-left { position: static; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-name" href="index.html">hannah holzer</a>
+  <ul class="nav-links">
+    <li><a href="index.html">home</a></li>
+    <li><a href="index.html">work</a></li>
+    <li><a href="about.html" class="active">about me</a></li>
+  </ul>
+</nav>
+
+<main class="about">
+
+  <div class="about-left">
+    <div class="about-photo">
+      <img src="images/profile_photo.HEIC" alt="Hannah Holzer">
+      <div class="about-photo-placeholder">your photo<br>here</div>
+    </div>
+
+    <p class="gear-label">Gear</p>
+    <ul class="gear-list">
+      <li><span>—</span>Canon EOS 5D Mark III</li>
+      <li><span>—</span>Canon EOS M50</li>
+    </ul>
+  </div>
+
+  <div class="about-right">
+    <h1 class="about-name">Hannah<br>Holzer</h1>
+    <p class="about-tagline">Amateur Photographer &nbsp;·&nbsp; USA</p>
+
+    <div class="about-bio">
+      <p>
+        I'm an amateur photographer from the USA with a love for the outdoors and an
+        inability to leave the house without a camera. Photography is something I do purely
+        for the joy of it.
+      </p>
+      <p>
+        Over the years I've been lucky enough to spend time living outside the US. I studied
+        abroad in Ireland and Australia, and later worked for a period in Germany. Every place
+        left me with a new set of light, landscapes, and coastlines to figure out.
+      </p>
+      <p>
+        I shoot mostly with a Canon EOS 5D Mark III and sometimes my smaller M50 when I want
+        to travel lighter. Both have logged a lot of miles.
+      </p>
+      <p>
+        More than anything I'm drawn to water. There's a stillness that comes with standing
+        at the edge of the ocean that I keep going back to, and that feeling tends to be
+        what pulls me outside with a camera in the first place.
+      </p>
+    </div>
+
+    <div class="locations">
+      <p class="locations-label">Places photographed</p>
+      <div class="locations-grid">
+        <span class="location-tag">USA</span>
+        <span class="location-tag">Ireland</span>
+        <span class="location-tag">Australia</span>
+        <span class="location-tag">Germany</span>
+        <span class="location-tag">Portugal</span>
+        <span class="location-tag">Spain</span>
+        <span class="location-tag">Denmark</span>
+        <span class="location-tag">Croatia</span>
+        <span class="location-tag">New Zealand</span>
+        <span class="location-tag">Italy</span>
+        <span class="location-tag">Montenegro</span>
+      </div>
+    </div>
+
+    <div class="about-contact">
+      <p class="contact-label">Get in touch</p>
+      <div class="contact-links">
+        <a href="mailto:hello@hannahholzer.com">email</a>
+        <a href="#">instagram</a>
+        <a href="#">flickr</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="mailto:hello@hannahholzer.com">mail</a>
+  <a href="#">instagram</a>
+  <a href="#">flickr</a>
+</footer>
+
+</body>
+</html>
